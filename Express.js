@@ -1,9 +1,18 @@
 const express = require("express");
 const app = express();
 app.get("", (req, res) => {
-  res.send("hello");
+  res.send(`hello <a href="/home">Goo</a>`);
 });
 app.get("/home", (req, res) => {
-  res.send("hello home");
+  console.log("data", req.query.name);
+  res.send("<h1>hello home<h1>");
 });
+
+app.get('/profile',(_,res)=>{
+  const user={
+    name:'muksh',
+    country:'india'
+  }
+})
+
 app.listen(3000);
