@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+//Middleware
+
 const reqFilter = (req, res, next) => {
   console.log("redFilter");
   if (!req.query.age) {
@@ -11,6 +13,9 @@ const reqFilter = (req, res, next) => {
     next();
   }
 };
+app.use(reqFilter);
+
+//middleware can be applied to all this route
 
 app.get("/", (req, res) => {
   res.send("welcome to home page");
