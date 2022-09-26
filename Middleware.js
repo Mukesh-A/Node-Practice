@@ -15,7 +15,7 @@ const reqFilter = (req, res, next) => {
 };
 app.use(reqFilter);
 
-//middleware can be applied to all this route
+//middleware can be applied to all this route 
 
 app.get("/", (req, res) => {
   res.send("welcome to home page");
